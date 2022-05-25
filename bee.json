@@ -1,19 +1,19 @@
 {
-    "version": "1.6.0",
+    "version": "1.6.1-rc1",
     "architecture": {
         "32bit": {
-            "url": "https://github.com/ethersphere/bee/releases/download/v1.6.0/bee-windows-386.zip",
+            "url": "https://github.com/ethersphere/bee/releases/download/v1.6.1-rc1/bee-windows-386.zip",
             "bin": [
                 "bee.exe"
             ],
-            "hash": "b7558da75a44c31915e16b644bb2908a6a80892cf06e3c7b078b3f051e95c038"
+            "hash": "a185b1a40d239592abfa417c467d32337c1df28d258dea0e25973d369c88a285"
         },
         "64bit": {
-            "url": "https://github.com/ethersphere/bee/releases/download/v1.6.0/bee-windows-amd64.zip",
+            "url": "https://github.com/ethersphere/bee/releases/download/v1.6.1-rc1/bee-windows-amd64.zip",
             "bin": [
                 "bee.exe"
             ],
-            "hash": "1bfc7b69b2660a83db90e2f479ec7202cac49acd9e13a556457d0e10dab67d96"
+            "hash": "bcec95b10caefa0806b3dbd36907db2a131b5eb56ee8a0b72e3313ed3457aa71"
         }
     },
     "homepage": "https://github.com/ethersphere/bee",
@@ -31,9 +31,9 @@
         "(Get-Content -path $persist_dir\\bee.yaml -Raw) -replace './password',\"$persist_dir\\password\" | Set-Content -Path $persist_dir\\bee.yaml",
         "if(!(Test-Path $persist_dir\\password)){[System.Web.Security.Membership]::GeneratePassword(32,5) | Set-Content -Path $persist_dir\\password}",
         "if(sc.exe query SwarmBeeSvc | Select-String FAILED){sc.exe create SwarmBeeSvc binPath= \"$dir\\bee.exe start --config=$persist_dir\\bee.yaml\" type= share start= auto displayName= \"Bee\"; sc.exe description SwarmBeeSvc \"Swarm client implemented in Go.\"}",
-        "if($global){$ETH_ADDRESS = (((C:\\ProgramData\\scoop\\shims\\bee.exe init --config=$persist_dir\\bee.yaml | Select-String ethereum) -split ' ‘)[-1]).Trim('\"')} else {$ETH_ADDRESS = (((bee.exe init --config=$persist_dir\\bee.yaml | Select-String ethereum) -split ' ‘)[-1]).Trim('\"')}; Write-Host \"Please make sure there is sufficient xDAI (for Gas) and BZZ available on $ETH_ADDRESS address.\nLearn how to fund your node by visiting our docs at https://docs.ethswarm.org/docs/installation/fund-your-node\"",
-        "Write-Host \"Obtain a free Infura account and set: swap-endpoint: wss://goerli.infura.io/ws/v3/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx inside $persist_dir\\bee.yaml\"",
-        "Write-Host \"After the initial fund deploy Bee chequebook with [sudo] $dir\\bee.exe deploy --config=$persist_dir\\bee.yaml\"",
+        "if($global){$ETH_ADDRESS = (((C:\\ProgramData\\scoop\\shims\\bee.exe init --config=$persist_dir\\bee.yaml | Select-String ethereum) -split ' ‘)[-1]).Trim('\"')} else {$ETH_ADDRESS = (((bee.exe init --config=$persist_dir\\bee.yaml | Select-String ethereum) -split ' ‘)[-1]).Trim('\"')}; Write-Host \"Please make sure there is XDAI and, if required, XBZZ available on the following Ethereum address on Gnosis Chain: 0x$ETH_ADDRESS.\nLearn how to fund your node by visiting our docs at https://docs.ethswarm.org/docs/installation/fund-your-node\"",
+        "Write-Host \"Bee requires a Gnosis Chain RPC endpoint to function. By default this is expected to be found at ws://localhost:8546.\nPlease see https://docs.ethswarm.org/docs/installation/install for more details on how to configure your node.\nConfig: $persist_dir\\bee.yaml\"",
+        "Write-Host \"Once your node's wallet has received the funds deploy Bee chequebook with [sudo] $dir\\bee.exe deploy --config=$persist_dir\\bee.yaml\"",
         "Write-Host 'Start Bee service with [sudo] sc.exe start SwarmBeeSvc'"
     ]
 }
