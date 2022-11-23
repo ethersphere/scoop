@@ -6,14 +6,14 @@
             "bin": [
                 "bee.exe"
             ],
-            "hash": "053790f250e3a70e9315e57d70c4f714cf63ccb0f0c581d80b427bedd3b303c0"
+            "hash": "4d8af49d6218baacf21fa66d0e5022b4f0d5c7a6f29090bb5dbdf7895067815f"
         },
         "64bit": {
             "url": "https://github.com/ethersphere/bee/releases/download/v1.10.0-rc9/bee-windows-amd64.zip",
             "bin": [
                 "bee.exe"
             ],
-            "hash": "ce70daf9be7e6375193eab0bdef9589f74f444ed9131f5374ff0612b6b2a4a23"
+            "hash": "f6b1daccef745a2f909c1b5e49560461527fa9c90676ab920324e5e1a8ab30ce"
         }
     },
     "homepage": "https://github.com/ethersphere/bee",
