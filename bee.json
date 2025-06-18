@@ -1,19 +1,19 @@
 {
-    "version": "2.6.0-rc6",
+    "version": "2.6.0-rc7",
     "architecture": {
         "32bit": {
-            "url": "https://github.com/ethersphere/bee/releases/download/v2.6.0-rc6/bee-windows-386.zip",
+            "url": "https://github.com/ethersphere/bee/releases/download/v2.6.0-rc7/bee-windows-386.zip",
             "bin": [
                 "bee.exe"
             ],
-            "hash": "d2e19ae74cd7723aaf1451d7c7d93b2b02781e39d6ad9064815e6dcf0e9809d0"
+            "hash": "70a02f8a79c54205fb10b25def1561c21251cd8773dc0146e22c05f0c17c7fec"
         },
         "64bit": {
-            "url": "https://github.com/ethersphere/bee/releases/download/v2.6.0-rc6/bee-windows-amd64.zip",
+            "url": "https://github.com/ethersphere/bee/releases/download/v2.6.0-rc7/bee-windows-amd64.zip",
             "bin": [
                 "bee.exe"
             ],
-            "hash": "90feac56ab3e5b61285ca1d8659a792332f7510902517e439223113ced6b24c8"
+            "hash": "920e40db3d1ad489c7f3104c5aa478e606b17f90ed0efad3628e36896747f8e0"
         }
     },
     "homepage": "https://github.com/ethersphere/bee",
